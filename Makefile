@@ -27,11 +27,10 @@ envrc-local:
 
 .create-env-local:
 	$(info [+] Make: Creating .env.local from template)
-	docker compose run --quiet --remove-orphans --rm gomplate --file "/templates/.env.local.tpl" --out "/output/.env.local"
-
+	docker compose run --quiet --remove-orphans --rm gomplate --file "/templates/.env.local.tmpl" --out "/output/.env.local"
 .create-envrc-local:
 	$(info [+] Make: Creating .envrc.local from template)
-	docker compose run --quiet --remove-orphans --rm gomplate --file "/templates/.envrc.local.tpl" --out "/output/.envrc.local"
+	docker compose run --quiet --remove-orphans --rm gomplate --file "/templates/.envrc.local.tmpl" --out "/output/.envrc.local"
 
 push-image:
 	$(info [+] Make: Pushing to ghcr.io...)
