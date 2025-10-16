@@ -1,0 +1,11 @@
+---
+services:
+  php:
+    image: "${IMAGE?err}:${IMAGE_TAG:-latest}"
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      target: "${IMAGE_TARGET:-prod}"
+      args:
+        - "PHP_IMAGE=${PHP_IMAGE:-php}"
+        - "PHP_IMAGE_TAG=${PHP_IMAGE_TAG?err}"
