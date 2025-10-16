@@ -1,1 +1,5 @@
 /.idea
+/.env.local
+/.envrc.local
+/.venv
+/node_modules

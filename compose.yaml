@@ -1,6 +1,7 @@
 ---
 services:
   php:
+    container_name: "${APP_CONTAINER?err}"
     image: "${IMAGE?err}:${IMAGE_TAG:-latest}"
     build:
       context: ./

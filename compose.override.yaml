@@ -1,0 +1,14 @@
+---
+services:
+  php:
+    working_dir: "/test"
+    volumes:
+      - "./:/test"
+  gomplate:
+    container_name: gomplate
+    image: hairyhenderson/gomplate:latest
+    profiles:
+      - templates
+    volumes:
+      - "./.dev/templates:/templates:ro"
+      - "./:/output"

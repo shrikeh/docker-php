@@ -1,0 +1,6 @@
+---
+version: "2"
+syncs:
+  sevendays-backend:
+    src: "."
+    sync_excludes: [".dev/*", ".git/*", ".idea/*"]

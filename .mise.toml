@@ -1,0 +1,17 @@
+[settings]
+experimental = true
+lockfile = true
+
+[env]
+_.python.venv = { path = ".venv", create = true }
+_.file = [
+    { path = ".env", tools = true },
+    { path = ".env.local", tools = true }
+]
+
+[tools]
+node = "lts"
+prettier = "latest"
+
+[tasks.prettier]
+run = "prettier --write ."

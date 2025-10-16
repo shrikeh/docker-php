@@ -3,6 +3,7 @@ ARG PHP_IMAGE_TAG=8.4.13-cli-alpine3.21
 
 FROM ${PHP_IMAGE}:${PHP_IMAGE_TAG} AS base
 ARG LOCAL_BIN_PATH=/usr/local/bin
+ENV LOCAL_BIN_PATH="${LOCAL_BIN_PATH}"
 RUN apk update
 RUN apk add --no-cache gcc autoconf icu-dev yaml-dev linux-headers libsodium-dev
 RUN apk add --no-cache --virtual .phpize-deps ${PHPIZE_DEPS}
