@@ -4,6 +4,9 @@ command -v brew >/dev/null 2>&1 && brew bundle install --quiet;
 dotenv_if_exists '.env.local'
 
 if command -v mise >/dev/null 2>&1; then
+  if [ -z "$(mise plugins ls | grep poetry)" ]; then
+      mise plugin add poetry;
+  fi
   eval "$(mise activate zsh --shims)"
   mise install --quiet 2>/dev/null;
 fi
@@ -14,3 +17,4 @@ if [[ "${DOCKER_SYNC}" ]]; then
 fi
 
 poetry env activate --quiet
+poetry sync --quiet
